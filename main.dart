@@ -1,9 +1,10 @@
 import 'dart:io';
+
 void main() {
 
-  bool activo = true;
+  int opcion;
 
-  while (activo) {
+  do {
 
     print("\n===== GESTIÓN DE BIBLIOTECA =====");
     print("1. Agregar libro");
@@ -15,7 +16,7 @@ void main() {
 
     print("\nSeleccione una opción:");
 
-    int opcion = int.parse(stdin.readLineSync()!);
+    opcion = int.parse(stdin.readLineSync()!);
 
     switch (opcion) {
 
@@ -40,16 +41,17 @@ void main() {
       break;
 
       case 6:
-        activo = false;
         print("Programa finalizado");
       break;
 
       default:
         print("Opción inválida");
-    }
-  }
-}
 
+    }
+
+  } while (opcion != 6);
+
+}
 
 
 
