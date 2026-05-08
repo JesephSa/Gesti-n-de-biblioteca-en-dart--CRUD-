@@ -6,7 +6,7 @@ List<Map<String, dynamic>> libros = [];
 void agregarLibro() {
 
   print("¿Cuantos libros desea agregar?");
-  int cantidad = int.parse(stdin.readLineSync()!);
+  int cantidad = int.tryParse(stdin.readLineSync() ?? '') ?? 0;
 
   if (cantidad > 0) {
     for (int i = 0; i < cantidad; i++) {
@@ -17,7 +17,7 @@ void agregarLibro() {
       String autor = stdin.readLineSync()!;
 
       print("Ingrese el año de publicación del libro:");
-      int anio = int.parse(stdin.readLineSync()!);
+      int anio = int.tryParse(stdin.readLineSync() ?? '') ?? 0;
 
       libros.add({
         'titulo': titulo,
