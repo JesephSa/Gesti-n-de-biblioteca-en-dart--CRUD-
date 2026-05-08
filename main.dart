@@ -1,5 +1,9 @@
 import 'dart:io';
 
+import 'crud/agregar-listar.dart';
+import 'crud/buscar-actualizar.dart';
+import 'crud/eliminar-salir.dart';
+
 void main() {
 
   int opcion;
@@ -16,28 +20,28 @@ void main() {
 
     print("\nSeleccione una opción:");
 
-    opcion = int.parse(stdin.readLineSync()!);
+    opcion = int.tryParse(stdin.readLineSync() ?? '') ?? 0;
 
     switch (opcion) {
 
       case 1:
-        print("Opción agregar libro");
+        agregarLibro();
       break;
 
       case 2:
-        print("Opción listar libros");
+        listarLibros();
       break;
 
       case 3:
-        print("Opción buscar libro");
+        buscarLibro(libros);
       break;
 
       case 4:
-        print("Opción actualizar libro");
+        actualizarLibro(libros);
       break;
 
       case 5:
-        print("Opción eliminar libro");
+        eliminarLibro(libros);
       break;
 
       case 6:
