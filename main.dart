@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'crud/eliminar_salir.dart';
 
 void main() {
 
@@ -37,11 +38,11 @@ void main() {
       break;
 
       case 5:
-        print("Opción eliminar libro");
+        eliminarLibro();
       break;
 
       case 6:
-        print("Programa finalizado");
+        salirPrograma();
       break;
 
       default:
@@ -52,7 +53,3 @@ void main() {
   } while (opcion != 6);
 
 }
-
-
-
-
